@@ -1,0 +1,57 @@
+
+		#login {
+			position: relative;
+			top: 150px;
+		}
+
+
+		#mid {
+			height: 400px;
+			background-color: white;
+			margin: 5px, 5px, 5px, 5px;
+			border-radius: 10%;
+		}
+
+		#titulo {
+			position: absolute;
+			top: 20px;
+			left: 35%;
+			font-family: Impact, sans-serif;
+			font-size:1.3rem;
+		}
+
+		#nome, #email, #senha, #senha2 {
+			position: absolute;
+			top: 90px;
+			left: 20%;
+			width: 240px;
+		}
+
+		#email {	
+			top: 130px;
+		}
+
+		#senha {
+			top: 170px;
+		}
+
+		#senha2 {
+			top: 210px;
+		}
+
+		#cadastrarBtn, #home, #msg{
+			position: absolute;
+			top: 270px;
+			left: 35%;
+		}
+
+		#msg {
+			top: 320px;
+			left: 20%;
+			color: red;
+		}
+
+		#home {
+			top: 350px;
+			left: 40%;
+		}

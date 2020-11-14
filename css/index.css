@@ -1,0 +1,48 @@
+		#titulo {
+			position: absolute;
+			top:100px;
+			left: 43%;
+			font-size:1.8rem;
+			font-weight: bold;
+			font-family:Monospace,sans-serif;
+		}
+	
+#login {
+			position: relative;
+			top: 150px;
+		}
+
+		#mid {
+			height: 230px;
+			background-color: white;
+			margin: 5px, 5px, 5px, 5px;
+			border-radius: 10%;
+		}
+
+		#email, #senha {
+			position: absolute;
+			top: 30px;
+			left: 25%;
+			width: 180px;
+		}
+
+		#senha {
+			top: 70px;
+		}
+
+		#entrarBtn, #cadastrar, #msg{
+			position: absolute;
+			top: 130px;
+			left: 35%;
+		}
+
+		#msg {
+			top: 170px;
+			left: 25%;
+			color: red;
+		}
+
+		#cadastrar {
+			top: 190px;
+			left: 33%;
+		}

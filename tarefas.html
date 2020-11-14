@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tarefas App</title>
+
+	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/tarefas.css">
+	<script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="angular/angular.min.js"></script>
+</head>
+<body style="background-color: #ccf2ff" onload="inicio()">
+
+	<div class="container" ng-app="myapp" ng-controller="taskCtrl">
+		<div class="row" id="header">
+			<div class="col-md-4">
+				<a href="index.html" id="sair">Sair</a>
+			</div>
+
+			<div class="col-md-4">
+				<p id="msg"></p>
+			</div>
+
+			<div class="col-md-4"></div>
+		</div>
+
+		<div class="row" id="tarefaHeader">
+			<div class="col-md-2"></div>
+			<div class="col-md-1" ng-repeat="param in params" style="background-color: {{ param.cor  }}">
+				{{ param.data }}
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+
+		<div id="alerta" class="alert alert-warning">{{ alerta }}</div>
+
+		<div class="row" ng-repeat="tarefa in tarefas" id="tarefa">
+			<div class="col-md-2"></div>
+			
+			<div class="col-md-1" style="background-color: {{ tarefa.cor  }}">
+				{{ tarefa.assunto }}
+			</div>
+
+			<div class="col-md-1" style="background-color: {{ tarefa.cor  }}">
+				{{ tarefa.local }}
+			</div>
+
+			<div class="col-md-1" style="background-color: {{ tarefa.cor  }}">
+				{{ tarefa.data }}
+			</div>
+
+			<div class="col-md-1" style="background-color: {{ tarefa.cor  }}">
+				{{ tarefa.time }}
+			</div>
+
+			<div class="col-md-1" style="background-color: {{ tarefa.cor  }}">
+				{{ tarefa.duracao }}
+			</div>
+
+			<div class="col-md-1" style="background-color: {{ tarefa.cor  }}">
+				{{ tarefa.comentario }}
+			</div>
+
+			<div class="col-md-1" style="background-color: {{ tarefa.cor  }}">
+				<a href="{{ tarefa.anexo }}" id="{{ tarefa.idDload }}" download>Download</a>
+			</div>
+
+			<div class="col-md-1" style="background-color: {{ tarefa.cor  }}">
+				<input type="radio" name="{{ tarefa.id }}" id="{{ tarefa.id }}">
+			</div>
+
+			<div class="col-md-2"></div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-md-5"></div>
+			<div class="col-md-6">
+				<button ng-click="aparecer()" class="btn btn-primary" id="tarefaBtn">{{ btn[0] }}</button>
+			</div>
+			<div class="col-md-1"></div>
+		</div>
+
+		<div class="criarTarefa" id="criarTarefa" ng-hide="{{ task }}">
+			<button type="button" ng-click="fechar()" class="btn btn-danger" id="fecharBtn">X</button>
+			<input type="text" class="form-control" ng-model="assunto" id="assunto">
+			<input type="text" class="form-control" ng-model="local" id="local">
+			<input type="date" class="form-control" ng-model="data" id="data">
+			<input type="time" class="form-control" ng-model="time" id="time">
+			<select class="form-control" id="duracao">
+				<option ng-repeat="d in duracao" value="{{ d }}">{{ d }}</option>
+			</select>
+
+			<textarea placeholder="Digite o seu comentário..." id="comentario" rows="5" ng-model="comentario"></textarea>
+
+
+			<input type="file" id="file" onchange="openFile(event)">
+
+			<button type="button" ng-click="gravar()" class="btn btn-primary" id="botao">{{ btn[1] }}</button>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/tarefas.js"></script>
+</body>
+</html>
